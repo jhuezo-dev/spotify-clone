@@ -20,6 +20,8 @@ import RightNav from '@/components/layout/navigation/RightNav.vue'
 import FooterNav from '@/components/layout/footer/FooterNav.vue'
 import HeaderNav from '@/components/layout/header/HeaderNav.vue';
 
+
+
 </script>
 
 <style scoped>
@@ -34,6 +36,8 @@ import HeaderNav from '@/components/layout/header/HeaderNav.vue';
 
 
 .content_wrapper {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
   height: 100%;
   overflow-y: auto;
   display: flex;

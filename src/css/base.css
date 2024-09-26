@@ -11,8 +11,8 @@
 
   --vt-c-black: #181818;
   --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-  --vt-c-gray: #464545;
+  --vt-c-black-mute: #1a1a1a;
+  --vt-c-gray: #292929;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -21,8 +21,9 @@
 
   --text-light-1: #2c3e50;
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-1: var(--white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  
 }
 
 /* semantic color variables for this project */
@@ -41,39 +42,30 @@
   --section-gap: 160px;
 }
 
-.flex {
-  display: flex;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.svg-icon {
-  color: var(--color-text);
-}
-
 .badge {
   background-color: #222222;
   color: var(--white);
   border: none;
   font-size: 14px;
   border-radius: 500px;
-  padding: .45rem .75rem;
+  padding: .25rem .75rem;
   text-align: center;
   margin-right: 0.75rem;
 }
 
- select {
-  background-color: transparent;
+select {
+  background: transparent;
   color: var(--color-text);
-  border: none;
+  /* border-radius: 8px; */
+  background: var(--color-background-mute);
+  
 }
 
 option {
-  background-color: #222222;
-  border: none;
-  width: 150px;
+  background: var(--color-background-soft);
+  border: solid 1px transparent;
+  border-radius: 8px;
+  /* width: 100px; */
 }
 
 .square_avatar img{
@@ -128,6 +120,8 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 

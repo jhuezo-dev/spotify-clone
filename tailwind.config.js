@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [],
+export default {
+  content: ["./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'almost-light': '#F6F6F6',
+        'button-bg': '#222222'
+      }
+    },
   },
   plugins: [],
 }

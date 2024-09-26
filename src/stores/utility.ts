@@ -13,3 +13,9 @@ export function updateStorageSettings(key: string | number, val: any, itemName: 
     localStorage.setItem(itemName, JSON.stringify(storage))
   }
 }
+export function getStorageNavbar(navbar: string) {
+  const s = JSON.parse(localStorage.getItem(navbar)!);
+  if(s) {
+    return {key: navbar, value: s}
+  }
+}

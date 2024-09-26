@@ -1,9 +1,13 @@
 <template>
   <div class="footer" >
-    <div class="now_playing" >
-      <AvatarIcon :item="nowPlaying"/>
-
+    <div class="flex pl-4" >
+      <img src="../../../assets/default_user.png" width="45" height="45" alt="default user icon" />
+      <div class="flex flex-col pl-4">
+        <div class="text">{{ nowPlaying.song }}</div>
+        <p class="sub-text">{{ nowPlaying.artist }}</p>
+      </div>
     </div>
+
     <div class="music_controls">
     music controls
     </div>
@@ -21,8 +25,6 @@
 <script setup>
 import {ref, computed } from 'vue'
 import { useGeneralStore } from '@/stores/GeneralStore'
-import AvatarIcon from '@/components/AvatarIcon.vue'
-
 
 const generalStore = useGeneralStore()
 const payload = ref({
@@ -43,30 +45,22 @@ function ToggleRightNavCollapse() {
 
 <style lang="scss" scoped>
 .footer {
-
   height: 80px;
-  // min-height: 80px;
   display: flex;
   position: relative;
   justify-content: space-between;
-  // height: 100%;
-  // margin-top: auto;
   padding-left: .5rem;
   padding-right: .5rem;
   align-items: center;
-  // background-color: var(--black);
-
-  // .now_playing {
-  //   display:flex;
-  // }
-
-  // .music_controls {
-  //   display: flex;
-  // }
-
-  // .music_actions {
-  //   display: flex;
-  // }
-
 }
+
+.text {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--vt-c-text-dark-1);
+  }
+  .sub-text {
+    color: var(--vt-c-text-dark-2);
+    font-size: 12px;
+  }
 </style>

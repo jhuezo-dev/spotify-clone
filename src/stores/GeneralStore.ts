@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { updateStorageSettings } from './utility'
+import { getStorageNavbar, updateStorageSettings } from './utility'
 
 export const useGeneralStore = defineStore({
   id: 'general',
@@ -16,6 +16,16 @@ export const useGeneralStore = defineStore({
     }
   }),
   actions: {
+    loadNavStates(nav:string) {
+      const navbar = getStorageNavbar(nav);
+      if(navbar?.key === 'left-nav') {
+        this.left_nav_collapsed = navbar.value.left_nav_collapsed
+      }
+      if(navbar?.key === 'right-nav') {
+        this.right_nav_collapsed = navbar.value.right_nav_collapsed
+      }
+
+    },
     toggleLeftNavCollapse() {
       this.left_nav_collapsed = !this.left_nav_collapsed
       updateStorageSettings('left_nav_collapsed', this.left_nav_collapsed, 'left-nav')
@@ -39,7 +49,7 @@ export const useGeneralStore = defineStore({
     },
 
     GetNowPlaying() {
-      console.log('now playing', this.now_playing)
+      // console.log('now playing', this.now_playing)
       return this.now_playing 
     }
   }

@@ -5,7 +5,14 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import { useGeneralStore } from '@/stores/GeneralStore';
+const generalStore = useGeneralStore();
 
+onMounted(() => {
+  generalStore.loadNavStates('left-nav')
+  generalStore.loadNavStates('right-nav')
+})
 </script>
 
 <style scoped>
