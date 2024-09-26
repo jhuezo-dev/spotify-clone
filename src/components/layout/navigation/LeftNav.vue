@@ -28,9 +28,9 @@
   
       
     <div class="container-header">
-      <div class="flex pt-2 justify-center">
+      <div class="flex pt-3 justify-center">
         <Button @click="ToggleLeftNav()">
-          <svg-icon type="mdi" :size="30" :path="mdiMenuOpen" class="svg-icon"></svg-icon>
+          <svg-icon type="mdi" :size="35" :path="mdiMenuOpen" class="svg-icon"></svg-icon>
         </Button>
       
         <div class="your-library" :class="`${generalStore.left_nav_collapsed ? 'hidden' : 'flex w-full justify-between'}`">
@@ -44,10 +44,10 @@
       <div class="playlists" :class="`${generalStore.left_nav_collapsed ? 'hidden' : 'flex w-full items-center pt-3'}`">
         <div class="relative overflow-hidden">
           <div class="flex items-center overflow-x-scroll whitespace-nowrap w-full" :class="`${isRightChevronClicked ? 'left-blur' : 'right-blur'}`" style="scrollbar-width: none; ">
-            <button id="playlists" class="badge">Playlists</button>
+            <button id="playlists" class="badge" @click="ScrollTo('audiobooks')">Playlists</button>
             <button class="badge">Artists</button>
             <button class="badge">Albums</button>
-            <button id="audiobooks" class="badge">Audiobooks</button>  
+            <button id="audiobooks" class="badge" @click="ScrollTo('playlists')">Audiobooks</button>  
           </div>
           
           <div class="flex justify-between absolute top-0 bottom-0 left-0 right-0 ">
@@ -144,7 +144,10 @@ function ScrollTo(id: string) {
   const elementPos = element?.getBoundingClientRect().top;
   const offsetPos = elementPos! - 65;
 
+  // stops the window from offsetting when scrolling into view
   window.scrollBy({top: offsetPos, behavior: 'smooth'})
+  // scroll to the element horizontally
+  element?.scrollIntoView({'behavior': 'smooth', 'inline': 'nearest'})
 }
 
 
