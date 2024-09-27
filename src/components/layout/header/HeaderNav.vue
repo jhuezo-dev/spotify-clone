@@ -10,6 +10,7 @@
 
 <style lang="scss" scoped>
 .header_nav{
+  grid-area: HeaderNav;
   height: 65px;
   position: relative;
 }

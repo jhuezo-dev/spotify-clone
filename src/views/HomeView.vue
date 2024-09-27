@@ -1,9 +1,42 @@
 <template>
-  <div class="main-container">
-    <div class="container">
-      <div>main home page</div>
+  <!-- <div class="main-container"> -->
+    <div class="">
+      <table class="border-separate border-spacing-2">
+        <thead>
+          <tr>
+            <th>header</th>
+            <th>header</th>
+            <th>header</th>
+            <th>header</th>
+            <th>header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+          </tr>
+          <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+          </tr>
+          <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script setup lang="ts">

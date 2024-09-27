@@ -16,11 +16,12 @@ const generalStore = useGeneralStore();
 
 <style scoped>
 .navbar {
+  grid-area: RightNav;
   display: flex;
   flex-direction: column;
+  position: relative;
+  max-width: 350px;
   min-width: 250px;
-  width: calc(100% - 40vw);
-  max-width: 380px;
   background: var(--color-background-mute);
   border-radius: 6px;
 }
@@ -28,11 +29,5 @@ const generalStore = useGeneralStore();
 .nav_collapsed {
   display: none;
 }
-
-/* .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-} */
 
 </style>

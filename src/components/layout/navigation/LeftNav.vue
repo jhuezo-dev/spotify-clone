@@ -156,11 +156,12 @@ function ScrollTo(id: string) {
 
 <style scoped>
 .navbar {
+  grid-area: LeftNav;
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 80px;
-  width: calc(100% - 40vw);
-  max-width: 380px;
+  min-height: 0;
+  width: 350px;
   background: var(--color-background-mute);
   border-radius: 8px;
 }
@@ -229,10 +230,10 @@ function ScrollTo(id: string) {
 
 
 @media only screen and (max-width: 768px) {
-  .navbar {
+  /* .navbar {
     width: 80px;
     margin-right: .5rem;
-  }
+  } */
   
   .your-library, .playlists, .search-recents {
     display: none;
