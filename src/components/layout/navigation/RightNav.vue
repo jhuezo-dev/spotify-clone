@@ -21,7 +21,8 @@ const generalStore = useGeneralStore();
   flex-direction: column;
   position: relative;
   max-width: 350px;
-  min-width: 250px;
+  width: 100%;
+  min-width: 280px;
   background: var(--color-background-mute);
   border-radius: 6px;
 }

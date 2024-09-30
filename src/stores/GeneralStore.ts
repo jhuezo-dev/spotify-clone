@@ -7,12 +7,10 @@ export const useGeneralStore = defineStore({
     left_nav_collapsed: false,
     right_nav_collapsed: false,
     now_playing: {
-      type: null,
-      artist: null,
-      value: null,
-      songs: null,
-      playlists: null,
-      song: null
+      type: '',
+      artist: '',
+      song: '',
+      is_liked: false
     }
   }),
   actions: {
@@ -35,14 +33,12 @@ export const useGeneralStore = defineStore({
       updateStorageSettings('right_nav_collapsed', this.right_nav_collapsed, 'right-nav')
     },
 
-    SetNowPlaying(data: { type: string; song: string; artist: string }) {
+    SetNowPlaying(data: { type: string, artist: string, song: string, is_liked: boolean }) {
       this.now_playing = {
         type: data.type,
         artist: data.artist,
-        value: data.value,
-        songs: data.songs,
-        playlists: data.playlists,
-        song: data.song
+        song: data.song,
+        is_liked: data.is_liked
       }
 
       updateStorageSettings('now_playing', this.now_playing, 'now_playing')

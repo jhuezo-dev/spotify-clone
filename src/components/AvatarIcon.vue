@@ -99,12 +99,12 @@ onMounted(async () => {
 }
 
 @media only screen and (max-width: 768px) {
-  .image {
-    justify-content: center;
-  }
-  .text,
-  .sub-text {
-    display: none;
-  }
+  // .image {
+  //   justify-content: center;
+  // }
+  // .text,
+  // .sub-text {
+  //   display: none;
+  // }
 }
 </style>

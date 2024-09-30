@@ -4,7 +4,7 @@
     <LeftNav />
     <div class="content_wrapper" :class="`${generalStore.left_nav_collapsed ? 'left_nav_collapsed': `${generalStore.right_nav_collapsed ? 'right_nav_collapsed' : ''}`}`"> 
       <router-view :key="$route.fullPath" v-slot="{ Component }">
-        <component :is="Component" class=""/>
+        <component :is="Component" class="content_bg"/>
       </router-view>
     </div>
     <RightNav />
@@ -52,13 +52,18 @@ onMounted(() => {
 .content_wrapper {
   grid-area: content_wrapper;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 100%;
   min-width: 400px;
   background: var(--color-background-mute);
   border-radius: 6px;
   min-height: 0;
   overflow: hidden;
+  position: relative;
+}
+
+.content_bg {
+  flex: 1;
   position: relative;
 }
 

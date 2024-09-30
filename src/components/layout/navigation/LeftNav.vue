@@ -1,32 +1,5 @@
 <template>
-  <div class="navbar" id="nav_collapsed" :class="`${generalStore.left_nav_collapsed ? 'nav_collapsed' : ''}`">
-   
-      <!-- <div class="container">
-        <router-Link to="/">
-
-          <div class="home container-item " @click="active = !active" :class="active ? 'active' : ''">
-            <div class="icon">
-              <svg-icon type="mdi" :path="mdiHomeVariantOutline" :size="30" class="svg-icon"
-              :class="active ? 'active' : ''"></svg-icon>
-            </div>
-            <div class="text">Home</div>
-          </div>
-        
-        </router-Link>
-  
-        <router-Link to="/search">
-          <div class="search container-item" @click="active = !active" :class="active ? 'active' : ''">
-            <div class="icon">
-              <svg-icon type="mdi" :path="mdiMagnify" :size="30" class="svg-icon"
-              :class="active ? 'active' : ''"></svg-icon>
-            </div>
-            <div class="text">Search</div>
-          </div>
-        </router-Link>
-      </div> -->
-
-  
-      
+  <div class="navbar" id="nav_collapsed" :class="`${generalStore.left_nav_collapsed ? 'nav_collapsed' : 'w-max'}`">
     <div class="container-header">
       <div class="flex pt-3 justify-center">
         <Button @click="ToggleLeftNav()">
@@ -69,15 +42,11 @@
           </div>
         </div>
       </div>
-
-        
     </div>
-
 
     <div class="container-items" >
       <div class="search-recents" :class="`${generalStore.left_nav_collapsed ? 'hidden' : 'flex justify-between pl-4 pb-4'}`">
         <svg-icon type="mdi" :path="mdiMagnify" :size="22" class=""></svg-icon>
-          
         <select>
           <option v-for="o of sortbyOptions" :key="o.value">{{ o.artist }}</option>
         </select>
@@ -86,7 +55,6 @@
       <div class="library-items ml-4" v-for="item of your_library_items" :key="item.songs">
         <AvatarIcon :item="item" mode="list" />
       </div>
-      
     </div>
   </div>
 </template>
@@ -232,12 +200,11 @@ function ScrollTo(id: string) {
 @media only screen and (max-width: 768px) {
   /* .navbar {
     width: 80px;
-    margin-right: .5rem;
   } */
   
-  .your-library, .playlists, .search-recents {
+  /* .your-library, .playlists, .search-recents {
     display: none;
-  }
+  } */
   
 }
 </style>
