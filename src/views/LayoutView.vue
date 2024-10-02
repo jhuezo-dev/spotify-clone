@@ -38,8 +38,8 @@ onMounted(() => {
   "FooterNav FooterNav FooterNav";
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
-  width: 100%;
-  height: 100%; 
+  width: 100vw;
+  height: 100vh; 
   position: relative;
   min-height: 100%;
   overflow: auto;
