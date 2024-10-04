@@ -81,8 +81,10 @@ onMounted(async () => {
   display: flex;
 
   img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     background: var(--container-background-color);
     /* border-radius: 50%; */
   }

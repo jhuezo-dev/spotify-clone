@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center gap-1 ">
-    <progress :max="100" :value="level"></progress>
+    <progress :max="100" :value="level" class="w-10"></progress>
   </div>
 </template>
 
@@ -22,9 +22,9 @@ progress {
   border-radius: 8px;
 	display: flex;
   flex-direction: column;
-  max-width: 90px;
-	width: 90px;
-  min-width: 70px;
+  // max-width: 90px;
+	// width: auto;
+  // min-width: 40px;
 	justify-content: center;
 	align-items: center;
   background: var(--color-text);

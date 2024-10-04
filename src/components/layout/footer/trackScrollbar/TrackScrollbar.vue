@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center gap-1 ">
-    <span>00:00</span>
+    <span class="text-sm">00:00</span>
     <progress :max="100" :value="50"></progress>
-    <span>{{duration}}</span>
+    <span class="text-sm">{{duration}}</span>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ progress {
   border-radius: 8px;
 	display: flex;
   flex-direction: column;
-	width: 250px;
+	width: 200px;
+  min-width: 200px;
 	justify-content: center;
 	align-items: center;
   background: var(--color-text);

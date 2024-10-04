@@ -52,7 +52,7 @@
         </select>
       </div>
 
-      <div class="library-items ml-4" v-for="item of your_library_items" :key="item.songs">
+      <div class="flex justify-center items-center" v-for="item of your_library_items" :key="item.songs">
         <AvatarIcon :item="item" mode="list" />
       </div>
     </div>
@@ -135,7 +135,7 @@ function ScrollTo(id: string) {
 }
 
 .nav_collapsed {
-  width: 80px;
+  width: 75px;
 }
 
 .container {
@@ -176,12 +176,14 @@ function ScrollTo(id: string) {
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   height: 100%;
   padding-bottom: 4px;
   width: 100%;
-  padding-left: 2px;
-  padding-right: 16px;
+  /* padding-left: 2px;
+  padding-right: 16px; */
 }
 
 .container-items:hover {

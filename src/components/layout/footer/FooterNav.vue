@@ -1,59 +1,61 @@
 <template>
   <div class="footer">
-    <div class="flex justify-between w-full mb-2">
-      <div class="flex pl-4">
-        <div class="flex">
-          <!-- <img src="../../../assets/default_user.png" width="100" height="100" alt="default user icon" /> -->
-          <AvatarIcon :item="nowPlaying" mode="list" />
-        </div>
-        <div class="flex flex-col pl-4">
-          <div class="text">{{ nowPlaying.song }}</div>
-          <p class="sub-text">{{ nowPlaying.artist }}</p>
-        </div>
-        <div class="flex w-full pl-4 my-auto">
-          <div v-if="nowPlaying.is_liked" class="rounded-full p-1 bg-accent-green">
-            <svg-icon :class="`${nowPlaying.is_liked ? 'text-dark font-bold' : ''}`" type="mdi" :size="16" :path="mdiCheck"></svg-icon>
-          </div>
-          <svg-icon v-else class="rounded-lg" type="mdi" :size="20" :path="mdiPlusCircleOutline"></svg-icon>
-        </div>
-      </div>
-  
-      <div class="flex">
-        <div class="flex flex-col">
-          <div class="flex gap-2 justify-center items-center">
-            <svg-icon class="rounded-lg" type="mdi" :size="20" :path="mdiShuffle"></svg-icon>
-            <svg-icon class="rounded-lg" type="mdi" :size="30" :path="mdiSkipPrevious"></svg-icon>
-            <div class="rounded-3xl bg-button-light-bg">
-              <svg-icon class="text-dark p-1" type="mdi" :size="35" :path="mdiPlay"></svg-icon>
-            </div>
-            <svg-icon class="rounded-lg" type="mdi" :size="30" :path="mdiSkipNext"></svg-icon>
-            <svg-icon class="rounded-lg" type="mdi" :size="25" :path="mdiRepeatVariant"></svg-icon>
-          </div>
+    <div class="flex flex-col w-full">
+      <div class="flex justify-between gap-6 w-full mb-2">
+        <div class="flex pl-2">
           <div class="flex">
-            <TrackScrollbar :duration="duration" :goTo="goTo"/>
+            <img src="../../../assets/default_user.png" class="min-w-14 min-h-14 h-14 w-14 bg-blue-600 rounded"  alt="default user icon" />
+            <!-- <AvatarIcon :item="nowPlaying" mode="list" /> -->
+          </div>
+          <div class="flex flex-col pl-6">
+            <div class="text">{{ nowPlaying.song }}</div>
+            <p class="sub-text">{{ nowPlaying.artist }}</p>
+          </div>
+          <div class="flex w-full pl-10 my-auto">
+            <div v-if="nowPlaying.is_liked" class="rounded-full p-1 bg-accent-green">
+              <svg-icon :class="`${nowPlaying.is_liked ? 'text-dark font-bold' : ''}`" type="mdi" :size="16" :path="mdiCheck"></svg-icon>
+            </div>
+            <svg-icon v-else class="rounded-lg" type="mdi" :size="20" :path="mdiPlusCircleOutline"></svg-icon>
           </div>
         </div>
-      </div>
-  
-      <div class="flex gap-2 justify-center items-center">
-        <button class="flex flex-col mt-4" @click="ToggleRightNavCollapse" :class="`${generalStore.right_nav_collapsed ? '' : 'text-accent-green'}`">
-          <svg-icon type="mdi" :size="20" :path="mdiPlayBoxOutline"></svg-icon>
-          <span class="-mt-7 text-4xl" :class="`${generalStore.right_nav_collapsed ? 'invisible' : 'text-accent-green'}`">.</span>
-        </button>
-        <svg-icon type="mdi" :size="20" :path="mdiMicrophoneVariant"></svg-icon>
-        <svg-icon type="mdi" :size="20" :path="mdiPlaylistMusicOutline"></svg-icon>
-        <svg-icon type="mdi" :size="20" :path="mdiLaptop"></svg-icon>
-        <svg-icon type="mdi" :size="20" :path="mdiVolumeHigh"></svg-icon>
-        <div class="flex">
-          <VolumeScrollbar :level="level"/>
-        </div>
-        <svg-icon type="mdi" :size="18" :path="mdiArrowExpand"></svg-icon>
-      </div>
-    </div>
     
-    <div class="flex justify-end items-center w-full bg-accent-green rounded-lg">
-      <svg-icon class="text-dark" type="mdi" :size="16" :path="mdiMotionPlayOutline"></svg-icon>
-      <span class="text-dark p-1 pr-2 font-bold text-sm">Playing on DESKTOP</span>
+        <div class="flex">
+          <div class="flex flex-col">
+            <div class="flex gap-2 justify-center items-center">
+              <svg-icon class="rounded-lg" type="mdi" :size="20" :path="mdiShuffle"></svg-icon>
+              <svg-icon class="rounded-lg" type="mdi" :size="30" :path="mdiSkipPrevious"></svg-icon>
+              <div class="rounded-3xl bg-button-light-bg">
+                <svg-icon class="text-dark p-1" type="mdi" :size="35" :path="mdiPlay"></svg-icon>
+              </div>
+              <svg-icon class="rounded-lg" type="mdi" :size="30" :path="mdiSkipNext"></svg-icon>
+              <svg-icon class="rounded-lg" type="mdi" :size="25" :path="mdiRepeatVariant"></svg-icon>
+            </div>
+            <div class="flex">
+              <TrackScrollbar :duration="duration" :goTo="goTo"/>
+            </div>
+          </div>
+        </div>
+    
+        <div class="flex gap-3 justify-center items-center">
+          <button class="flex flex-col mt-4" @click="ToggleRightNavCollapse" :class="`${generalStore.right_nav_collapsed ? '' : 'text-accent-green'}`">
+            <svg-icon type="mdi" :size="20" :path="mdiPlayBoxOutline"></svg-icon>
+            <span class="-mt-7 text-4xl" :class="`${generalStore.right_nav_collapsed ? 'invisible' : 'text-accent-green'}`">.</span>
+          </button>
+          <svg-icon type="mdi" :size="20" :path="mdiMicrophoneVariant"></svg-icon>
+          <svg-icon type="mdi" :size="20" :path="mdiPlaylistMusicOutline"></svg-icon>
+          <svg-icon type="mdi" :size="20" :path="mdiLaptop"></svg-icon>
+          <svg-icon type="mdi" :size="20" :path="mdiVolumeHigh"></svg-icon>
+          <div class="flex">
+            <VolumeScrollbar :level="level"/>
+          </div>
+          <svg-icon type="mdi" :size="18" :path="mdiArrowExpand"></svg-icon>
+        </div>
+      </div>
+      
+      <div class="flex w-full justify-end items-center bg-accent-green rounded-lg">
+        <svg-icon class="text-dark" type="mdi" :size="16" :path="mdiMotionPlayOutline"></svg-icon>
+        <span class="text-dark p-1 pr-2 font-bold text-sm">Playing on DESKTOP</span>
+      </div>
     </div>
   </div>
 </template>
@@ -114,13 +116,11 @@ function ToggleRightNavCollapse() {
   height: 90px;
   max-height: 90px;
   display: flex;
-  flex-direction: column;
+  // flex-wrap: wrap;
   position: relative;
   justify-content: space-between;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   align-items: center;
-  min-width: 620px;
+  // min-width: auto;
   width: 100%;
 }
 

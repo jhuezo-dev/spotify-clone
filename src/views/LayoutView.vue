@@ -54,7 +54,7 @@ onMounted(() => {
   display: flex;
   /* flex-direction: column; */
   width: 100%;
-  min-width: 400px;
+  min-width: 500px;
   background: var(--color-background-mute);
   border-radius: 6px;
   min-height: 0;
@@ -63,8 +63,13 @@ onMounted(() => {
 }
 
 .content_bg {
-  flex: 1;
+  /* flex: 1; */
   position: relative;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  /* min-width: 500px; */
+  /* width: auto; */
 }
 
 
