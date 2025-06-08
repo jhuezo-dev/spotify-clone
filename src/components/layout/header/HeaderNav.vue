@@ -6,17 +6,17 @@
 
     <div class="flex gap-2 justify-left w-full min-w-max pl-4 justify-left" >
       <router-Link to="/">
-        <button class="flex rounded-full bg-button-bg p-2">
+        <button class="flex rounded-full bg-button-bg p-2" @click="searchInputToggle = false">
           <svg-icon type="mdi" :size="30" :path="mdiHomeOutline"></svg-icon>
         </button>
       </router-Link>
       <div class="flex items-center bg-button-bg p-2 rounded-full">
-        <!-- <router-Link to="/search"> -->
+        <router-Link to="/search">
           <button :class="`${!searchInputToggle ? '' : 'min-w-96'}`"  class="flex items-center w-full gap-2 " @click="searchInputToggle = !searchInputToggle">
             <svg-icon  type="mdi" :size="30" :path="mdiMagnify"></svg-icon>
             <span :class="`${!searchInputToggle ? 'hidden' : ''}`" class="text-lg">What do you want to play?</span>
           </button>
-        <!-- </router-Link> -->
+        </router-Link>
         <div :class="`${!searchInputToggle ? 'hidden' : ''}`" class="border-l border-button-light-bg h-7"></div>
         <button :class="`${!searchInputToggle ? 'hidden' : ''}`" class="p-1 px-3">
           <svg-icon type="mdi" :size="25" :path="mdiFileAccount"></svg-icon>

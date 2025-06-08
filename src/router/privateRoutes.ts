@@ -1,7 +1,12 @@
 export default [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: () => import('../views/HomeView.vue')
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('../views/SearchView.vue')
   },
 ]
